@@ -1,0 +1,32 @@
+package com.infy.userinterface;
+
+public class HealthcareTester {
+	
+	private static HealthcareService healthcareService;
+	private static PropertiesConfiguration propertiesConfiguration;
+	private static final Log LOG = LogFactory.getLog(HealthcareTester.class);	
+	
+	public static void main(String[] args) throws ConfigurationException {
+		healthcareService = new HealthcareServiceImpl(); 
+		propertiesConfiguration = new Configurations().properties("configuration.properties");
+		
+		showDoctors();
+		searchDoctor();
+		bookAppointmentWithDoctor();		
+		
+	}
+	
+	public static void showDoctors() {
+		// will implement this method
+	}
+	
+	public static void searchDoctor() {
+		// will implement this method
+	}
+	
+	public static void bookAppointmentWithDoctor() {
+		// will implement this method
+	}
+	
+}
+

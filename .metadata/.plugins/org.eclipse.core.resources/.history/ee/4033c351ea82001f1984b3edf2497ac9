@@ -1,0 +1,89 @@
+package com.infy.userinterface;
+
+public class HealthcareTester {
+	
+	private static HealthcareService healthcareService;
+	private static PropertiesConfiguration propertiesConfiguration;
+	private static final Log LOG = LogFactory.getLog(HealthcareTester.class);	
+	
+	public static void main(String[] args) throws ConfigurationException {
+		healthcareService = new HealthcareServiceImpl(); 
+		propertiesConfiguration = new Configurations().properties("configuration.properties");
+		
+		showDoctors();
+		searchDoctor();
+		bookAppointmentWithDoctor();		
+		
+	}
+	
+	public static void showDoctors() {
+		LOG.info("Healthcare Appointment Scheduler | All Available Doctors");
+		
+		try {
+			List<Doctor> doctors = healthcareService.showDoctors();
+			
+			LOG.info("--------------------------------------------------------------------------");
+			LOG.info(String.format("%s %-5s %s %-8s %s %-15s %s %-15s %s %-15s %s", "|",
+	                "Dr.ID", "|",  "Dr.Name", "|", "Specialization", "|",
+	                "Available Date",  ":", "Time", "|"));
+			
+			for(Doctor doctor : doctors) {
+				LOG.info(String.format("%s %-5s %s %-8s %s %-15s %s %-15s %s %-15s %s", "|",
+		                doctor.getDoctorId(), "|", doctor.getDoctorName(), "|", doctor.getSpecialization(),
+		                "|", doctor.getAvailableDate(), ":", doctor.getAvailableTime(), "|"));
+			}
+			
+			LOG.info("--------------------------------------------------------------------------");
+		} catch (HealthcareException exception) {
+		    String exceptionMessage = exception.getMessage();
+		    
+		    if (exceptionMessage == null) {
+		    	exceptionMessage = "Tester.GENERAL_EXCEPTION";
+		    }
+
+		    String errorMessage = (String)propertiesConfiguration.getProperty(exceptionMessage);
+		    LOG.error(String.format("ERROR: %s", errorMessage));
+		}		
+		
+	}
+	
+	public static void searchDoctor() {
+		LOG.info("Healthcare Appointment Scheduler | Search Doctors");
+		
+		String specialization = "Dermatology";
+		
+		try {
+			List<Doctor> doctors = healthcareService.fetchDoctor(specialization);
+			
+			LOG.info("--------------------------------------------------------------------------");
+			LOG.info(String.format("%s %-5s %s %-8s %s %-15s %s %-15s %s %-15s %s", "|",
+	                "Dr.ID", "|",  "Dr.Name", "|", "Specialization", "|",
+	                "Available Date",  ":", "Time", "|"));
+			
+			for(Doctor doctor : doctors) {
+				LOG.info(String.format("%s %-5s %s %-8s %s %-15s %s %-15s %s %-15s %s", "|",
+		                doctor.getDoctorId(), "|", doctor.getDoctorName(), "|", doctor.getSpecialization(),
+		                "|", doctor.getAvailableDate(), ":", doctor.getAvailableTime(), "|"));
+			}
+			
+			LOG.info("--------------------------------------------------------------------------");
+		} catch (HealthcareException exception) {
+		    String exceptionMessage = exception.getMessage();
+		    
+		    if (exceptionMessage == null) {
+		    	exceptionMessage = "Tester.GENERAL_EXCEPTION";
+		    }
+
+		    String errorMessage = (String)propertiesConfiguration.getProperty(exceptionMessage);
+		    LOG.error(String.format("ERROR: %s", errorMessage));
+		}	
+		
+	}
+	
+	public static void bookAppointmentWithDoctor() {
+		// will implement this method
+		return null;
+	}
+	
+}
+

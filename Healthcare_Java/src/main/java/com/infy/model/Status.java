@@ -1,5 +1,8 @@
 package com.infy.model;
 
 public enum Status {
-//	will implement this enum
+	
+	CONFIRMED,
+	NOT_CONFIRMED;
+
 }

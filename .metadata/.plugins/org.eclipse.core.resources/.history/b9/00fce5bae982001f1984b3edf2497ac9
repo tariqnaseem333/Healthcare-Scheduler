@@ -1,0 +1,14 @@
+package com.infy.model;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Doctor {
+	
+	private Integer doctorId;
+	private String doctorName;
+	private String specialization;
+	private String availableTime;
+	private LocalDate availableDate;
+	
+}

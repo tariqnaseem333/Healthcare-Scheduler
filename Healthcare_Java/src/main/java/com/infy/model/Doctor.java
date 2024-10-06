@@ -1,5 +1,20 @@
 package com.infy.model;
 
+import java.time.LocalDate;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Doctor {
-//	will implement this class
+	
+	private Integer doctorId;
+	private String doctorName;
+	private String specialization;
+	private String availableTime;
+	private LocalDate availableDate;
+	
 }
