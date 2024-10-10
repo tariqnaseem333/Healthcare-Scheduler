@@ -61,7 +61,7 @@ public class HealthcareServiceImpl implements HealthcareService  {
 		Validator validation = new Validator();
 		
 		try {
-			validation.validatePatient(patient);
+//			validation.validatePatient(patient);
 			
 			Doctor doctor = dao.getDoctorList()
 							   .stream()
