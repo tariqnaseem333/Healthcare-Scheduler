@@ -1,0 +1,46 @@
+19-Oct-2024 14:56:51 ERROR - Service.NO_DOCTORS_FOUND
+com.infy.exception.HealthcareException: Service.NO_DOCTORS_FOUND
+	at com.infy.service.HealthcareServiceImpl.showDoctors(HealthcareServiceImpl.java:31) [classes/:?]
+	at com.infy.userinterface.HealthcareTester.showDoctors(HealthcareTester.java:40) [classes/:?]
+	at com.infy.userinterface.HealthcareTester.main(HealthcareTester.java:30) [classes/:?]
+19-Oct-2024 14:57:45 ERROR - Service.DOCTOR_NOT_FOUND
+com.infy.exception.HealthcareException: Service.DOCTOR_NOT_FOUND
+	at com.infy.service.HealthcareServiceImpl.fetchDoctor(HealthcareServiceImpl.java:51) [classes/:?]
+	at com.infy.userinterface.HealthcareTester.searchDoctor(HealthcareTester.java:73) [classes/:?]
+	at com.infy.userinterface.HealthcareTester.main(HealthcareTester.java:31) [classes/:?]
+19-Oct-2024 15:00:14 ERROR - Validator.INVALID_PATIENT_NAME
+com.infy.exception.HealthcareException: Validator.INVALID_PATIENT_NAME
+	at com.infy.validator.Validator.validatePatient(Validator.java:30) [classes/:?]
+	at com.infy.service.HealthcareServiceImpl.bookAnAppointment(HealthcareServiceImpl.java:64) [classes/:?]
+	at com.infy.userinterface.HealthcareTester.bookAppointmentWithDoctor(HealthcareTester.java:107) [classes/:?]
+	at com.infy.userinterface.HealthcareTester.main(HealthcareTester.java:32) [classes/:?]
+19-Oct-2024 15:00:39 ERROR - Validator.INVALID_GENDER
+com.infy.exception.HealthcareException: Validator.INVALID_GENDER
+	at com.infy.validator.Validator.validatePatient(Validator.java:30) [classes/:?]
+	at com.infy.service.HealthcareServiceImpl.bookAnAppointment(HealthcareServiceImpl.java:64) [classes/:?]
+	at com.infy.userinterface.HealthcareTester.bookAppointmentWithDoctor(HealthcareTester.java:107) [classes/:?]
+	at com.infy.userinterface.HealthcareTester.main(HealthcareTester.java:32) [classes/:?]
+19-Oct-2024 15:02:00 ERROR - Validator.INVALID_PATIENT_ISSUE
+com.infy.exception.HealthcareException: Validator.INVALID_PATIENT_ISSUE
+	at com.infy.validator.Validator.validatePatient(Validator.java:30) [classes/:?]
+	at com.infy.service.HealthcareServiceImpl.bookAnAppointment(HealthcareServiceImpl.java:64) [classes/:?]
+	at com.infy.userinterface.HealthcareTester.bookAppointmentWithDoctor(HealthcareTester.java:107) [classes/:?]
+	at com.infy.userinterface.HealthcareTester.main(HealthcareTester.java:32) [classes/:?]
+19-Oct-2024 15:02:26 ERROR - Validator.INVALID_CONTACT_NUMBER
+com.infy.exception.HealthcareException: Validator.INVALID_CONTACT_NUMBER
+	at com.infy.validator.Validator.validatePatient(Validator.java:30) [classes/:?]
+	at com.infy.service.HealthcareServiceImpl.bookAnAppointment(HealthcareServiceImpl.java:64) [classes/:?]
+	at com.infy.userinterface.HealthcareTester.bookAppointmentWithDoctor(HealthcareTester.java:107) [classes/:?]
+	at com.infy.userinterface.HealthcareTester.main(HealthcareTester.java:32) [classes/:?]
+19-Oct-2024 15:28:13 ERROR - Validator.INVALID_APPOINTMENT_TIME
+com.infy.exception.HealthcareException: Validator.INVALID_APPOINTMENT_TIME
+	at com.infy.validator.Validator.validatePatient(Validator.java:31) [classes/:?]
+	at com.infy.service.HealthcareServiceImpl.bookAnAppointment(HealthcareServiceImpl.java:65) [classes/:?]
+	at com.infy.userinterface.HealthcareTester.bookAppointmentWithDoctor(HealthcareTester.java:107) [classes/:?]
+	at com.infy.userinterface.HealthcareTester.main(HealthcareTester.java:32) [classes/:?]
+19-Oct-2024 15:28:33 ERROR - Validator.INVALID_APPOINTMENT_DATE
+com.infy.exception.HealthcareException: Validator.INVALID_APPOINTMENT_DATE
+	at com.infy.validator.Validator.validatePatient(Validator.java:31) [classes/:?]
+	at com.infy.service.HealthcareServiceImpl.bookAnAppointment(HealthcareServiceImpl.java:65) [classes/:?]
+	at com.infy.userinterface.HealthcareTester.bookAppointmentWithDoctor(HealthcareTester.java:107) [classes/:?]
+	at com.infy.userinterface.HealthcareTester.main(HealthcareTester.java:32) [classes/:?]

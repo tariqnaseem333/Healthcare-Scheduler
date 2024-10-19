@@ -3,6 +3,7 @@ package com.infy.service;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Locale;
 import java.util.stream.Collectors;
 
 import org.apache.commons.logging.LogFactory;
@@ -25,7 +26,7 @@ public class HealthcareServiceImpl implements HealthcareService  {
 
 		try {
 			List<Doctor> doctorList = dao.getDoctorList();
-
+			
 			if(doctorList.isEmpty()) 				
 				throw new HealthcareException("Service.NO_DOCTORS_FOUND");
 			return doctorList;
@@ -42,9 +43,9 @@ public class HealthcareServiceImpl implements HealthcareService  {
 
 		try {
 			List<Doctor> doctorList = dao.findDoctors(specialization)
-					.stream()
-					.sorted((doctor1, doctor2) -> doctor1.getAvailableDate().compareTo(doctor2.getAvailableDate()))
-					.collect(Collectors.toList());
+										 .stream()
+										 .sorted((doctor1, doctor2) -> doctor1.getAvailableDate().compareTo(doctor2.getAvailableDate()))
+										 .collect(Collectors.toList());
 			if(doctorList.isEmpty())
 				throw new HealthcareException("Service.DOCTOR_NOT_FOUND");
 			return doctorList;
@@ -70,7 +71,7 @@ public class HealthcareServiceImpl implements HealthcareService  {
 							   .get();
 			
 			String[] availableTime = doctor.getAvailableTime().split("-");
-			DateTimeFormatter parseFormat = DateTimeFormatter.ofPattern("hh[:mm]a");
+			DateTimeFormatter parseFormat = DateTimeFormatter.ofPattern("hh:mm[a]").withLocale(Locale.US);
 			LocalTime doctorStartTime = LocalTime.parse(availableTime[0], parseFormat);
 			LocalTime doctorEndTime = LocalTime.parse(availableTime[1], parseFormat);
 			

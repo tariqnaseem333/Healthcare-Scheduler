@@ -59,15 +59,15 @@ public class HealthcareTester {
 		    }
 
 		    String errorMessage = (String)propertiesConfiguration.getProperty(exceptionMessage);
-		    LOG.error(String.format("ERROR: %s", errorMessage));
+		    LOG.info(String.format("ERROR: %s", errorMessage));
 		}		
 		
 	}
 	
 	public static void searchDoctor() {
-		LOG.info("Healthcare Appointment Scheduler | Search Doctors");
-		
 		String specialization = "Dermatology";
+		
+		LOG.info("Healthcare Appointment Scheduler | Doctor by specialization: " + specialization);
 		
 		try {
 			List<Doctor> doctors = healthcareService.fetchDoctor(specialization);
@@ -92,7 +92,7 @@ public class HealthcareTester {
 		    }
 
 		    String errorMessage = (String)propertiesConfiguration.getProperty(exceptionMessage);
-		    LOG.error(String.format("ERROR: %s", errorMessage));
+		    LOG.info(String.format("ERROR: %s", errorMessage));
 		}	
 		
 	}
@@ -110,7 +110,7 @@ public class HealthcareTester {
 			
 			if(status.equals(Status.CONFIRMED)) 
 				LOG.info("Appointment Confirmed with Appointment Id: " + appointment.getAppointmentId() + 
-						" for the Date­­­ " + appointment.getAppointmentDate() + " and Time " + appointment.getAppointmentTime());
+						" for the Date " + appointment.getAppointmentDate() + " and Time " + appointment.getAppointmentTime());
 			else if(status.equals(Status.NOT_CONFIRMED)) 
 				LOG.info("Sorry!, The doctor you are trying to book is not avaiable for the date and time you provided.\n"
 						+ "Please choose different doctor or different Time and Date.");
@@ -124,7 +124,7 @@ public class HealthcareTester {
 		    }
 		    
 		    String errorMessage = (String) propertiesConfiguration.getProperty(exceptionMessage);
-		    LOG.error(String.format("ERROR: %s", errorMessage));
+		    LOG.info(String.format("ERROR: %s", errorMessage));
 		}	
 		
 	}

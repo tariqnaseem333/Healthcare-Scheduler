@@ -1,0 +1,10 @@
+12-Oct-2024 12:15:52 ERROR - Service.NO_DOCTORS_FOUND
+com.infy.exception.HealthcareException: Service.NO_DOCTORS_FOUND
+	at com.infy.service.HealthcareServiceImpl.showDoctors(HealthcareServiceImpl.java:31) [classes/:?]
+	at com.infy.userinterface.HealthcareTester.showDoctors(HealthcareTester.java:40) [classes/:?]
+	at com.infy.userinterface.HealthcareTester.main(HealthcareTester.java:30) [classes/:?]
+12-Oct-2024 12:16:20 ERROR - Service.NO_DOCTORS_FOUND
+com.infy.exception.HealthcareException: Service.NO_DOCTORS_FOUND
+	at com.infy.service.HealthcareServiceImpl.showDoctors(HealthcareServiceImpl.java:31) [classes/:?]
+	at com.infy.userinterface.HealthcareTester.showDoctors(HealthcareTester.java:40) [classes/:?]
+	at com.infy.userinterface.HealthcareTester.main(HealthcareTester.java:30) [classes/:?]
